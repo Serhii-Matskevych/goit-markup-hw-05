@@ -34,6 +34,10 @@ body {
 .page-header {
   border-bottom: 1px solid #ECECEC;;
 }
+.page-header .container {
+  width: 1200px;
+  height: 80px;
+}
 .kontainer .header {
   display:flex;
   padding-top: 32px;
@@ -120,14 +124,21 @@ justify-content: center;
   width: 170px;
   height: 92px;
   border-radius: 4px;
-border: 1px solid #AFB1B8
+border: 1px solid #AFB1B8;
+transition-property: color;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-company:hover {
   color: var(--accent-color);
 border: 1px solid var(--accent-color);
+
+
 }
 .icon-company:focus {
+  border: 1px solid var(--accent-color);
   color: var(--accent-color);
+ 
   
 }
 .icon-company-list .item {
@@ -151,6 +162,9 @@ font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
 text-decoration: none;
+transition-property:color;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .feature-list .item::before {
@@ -178,11 +192,13 @@ text-decoration: none;
 .auth-link:hover {
   fill: var(--accent-color);
   color: var(--accent-color);
+
 }
 
 /* состояние в фокусе */
 .auth-link:focus {
   color: var(--accent-color);
+  
 }
 /* навигацыя сайта */
 .link {
@@ -193,22 +209,39 @@ text-decoration: none;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+  transition-property:color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   
 }
 /* состояние наведения */
 .link:hover {
   color: var(--accent-color);
+
 }
 
 .link.current{
   color: var(--accent-color);
   display: block;
+position: relative;
+ 
 }
-
+.link.current::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 28px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
 /* состояние в фокусе */
 .link:focus {
   color: var(--accent-color);
+   
 }
 /* герой */
 .hero {
@@ -252,7 +285,8 @@ url(../img-home-work2/Img9.jpg);
   padding-bottom: 10px;
   padding-left: 32px;
   padding-right: 32px;
-  
+  width: 200px;
+  height: 50px;
 }
 .feature-list {
   display: flex;
@@ -306,6 +340,7 @@ url(../img-home-work2/Img9.jpg);
 .card-project-img {
   position: relative;
   overflow: hidden;
+ 
 }
 .text-project {
   height: 100%;
@@ -321,7 +356,9 @@ url(../img-home-work2/Img9.jpg);
   padding-left: 24px;
   padding-right: 24px;
   transform: translateY(100%);
-  transition: transform 250ms;
+  transition-property:transform;
+  transition-duration: 250ms;
+  transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 img {
@@ -351,6 +388,7 @@ img {
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
+  
 }
 .photo-card .item:last-child{
   margin-right: 0;
@@ -397,29 +435,38 @@ img {
   justify-content: center;
 }
 .master-soc-link {
-  
   width: 44px;
   height: 44px;
   border-radius: 50%;
   display:flex;
   align-items: center;
   justify-content: center;
+      transition-property:background-color;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .master-soc-icon {
-  fill: #AFB1B8;}
+  transition-property:fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #AFB1B8;
+}
 .master-soc-link:hover {
   background-color: var(--accent-color);
+
 }
 .master-soc-link:focus {
-  
-  background-color: var(--accent-color);
+    transition-property:background-color;
+
 }
 .master-soc-link:hover .master-soc-icon {
   fill: var(--footer-logo-color);
+   
 }
 
 .master-soc-link:focus .master-soc-icon {
   fill: var(--footer-logo-color);
+
 }
 .clients {
   font-size: 36px;
@@ -454,16 +501,23 @@ img {
 
 .card {
   display: block;
+  transition-property:box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+ 
 }
-.card:hover {
+.card:hover{
+ 
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
   0px 4px 4px rgba(0, 0, 0, 0.06),
   1px 4px 6px rgba(0, 0, 0, 0.16);
+
 }
 .card:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+ 
 }
 .card-project {
  padding-top: 20px;
@@ -574,7 +628,9 @@ a {
   border-radius: 4px;
   text-align: center;
   border: transparent;
-  
+    transition-property:color,background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .button-list {
@@ -585,31 +641,30 @@ a {
 .button-list .item {
   margin-right: 8px;
 }
-.button-secondary:hover {
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-  0px 1px 2px rgba(0, 0, 0, 0.08),
-  0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-}
-.button-secondary:focus{
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-    0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-}
+
 .button-list .item:last-child{
   margin-right: 0;
 }
 
 /* состояние ховер */
 .button-secondary:hover {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
   color: #fff;
   background-color: var(--accent-color);
+ 
 }
 /* состояние фокус */
 .button-secondary:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+  0px 1px 2px rgba(0, 0, 0, 0.08),
+  0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
   color: #fff;
   background-color: var(--accent-color);
+  
 }
 
 .card-title {
@@ -677,15 +732,21 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+    transition-property:background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-soc-icon {
+
   fill: #FFFFFF;
 }
 .footer-soc-link:hover{
   background-color: var(--accent-color);
+
 }
 .footer-soc-link:focus {
   background-color: var(--accent-color);
+ 
 }
 .footer-soc-item + .footer-soc-item {
   margin-left: 10px;
@@ -697,7 +758,8 @@ a {
   position: absolute;
  position: fixed;
 background-color: rgba(0, 0, 0, 0.2);
-transition: opacity 250ms, visibility 250ms;
+transition: opacity 250ms,
+visibility 250ms;
 
 }
 .modal {
@@ -709,6 +771,7 @@ width: 528px;
 min-height: 581px;
 background-color: var(--footer-logo-color);
 border-radius: 4px;
+
 }
 .button-modal {
   position: absolute;
